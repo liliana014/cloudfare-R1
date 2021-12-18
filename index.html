@@ -327,9 +327,12 @@
   </head>
   <body>
     <script>
-    var url = "https://2b7.us/api/index.php";
+      function shorturl() {
+        var url = "https://2b7.us/api/index.php";
+
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
+
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             console.log(xhr.status);
@@ -337,7 +340,9 @@
             document.getElementById("text").value = xhr.responseText;
           }
         };
+
         xhr.send();
+      }
     </script>
     <br />
     <!-- partial -->
@@ -357,15 +362,8 @@
               required
             />
             <br />
-            <input
-              type="text"
-              name="result"
-              id="result"
-              value=""
-              class="form-control"
-              required
-            />
-        
+
+            <div class="modal-body" id="result">No result</div>
 
             <button
               type="button"
@@ -399,9 +397,22 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/liliana014/cloudfare00058@main/main.js"
+      src="https://cdn.jsdelivr.net/gh/liliana014/cloudfare00037@main/main.js"
       crossorigin="anonymous"
     ></script>
 
+    <script type="text/javascript">
+      function copiarUser() {
+        var user = document.getElementById("username");
+        user.select();
+        document.execCommand("copy");
+      }
+
+      function copiarPass() {
+        var pass = document.getElementById("password");
+        pass.select();
+        document.execCommand("copy");
+      }
+    </script>
   </body>
 </html>
