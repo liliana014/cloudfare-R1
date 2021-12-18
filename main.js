@@ -1,6 +1,22 @@
 let res
   function shorturl() {
 
+	  var url = "https://2b7.us/api/index.php";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            document.getElementById("text").value = xhr.responseText;
+          }
+          shorturl();
+        };
+
+        xhr.send();
+	  
 
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
