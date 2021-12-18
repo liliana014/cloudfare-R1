@@ -1,11 +1,10 @@
 let res
   function shorturl() {
-	  	searchbtn.onclick = function(){
-	    result.select();
-	    document.execCommand('copy');
-		};
 	  
-	  
+            var pass = document.getElementById("result");
+            pass.select();
+            document.execCommand("copy");
+	  	  
 
 	  var url = "https://2b7.us/api/index.php";
 
