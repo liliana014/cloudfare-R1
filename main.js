@@ -12,7 +12,6 @@ let res
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
           }
-          shorturl();
         };
 
         xhr.send();
