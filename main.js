@@ -23,8 +23,8 @@ let res
   document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
 
-
-
+	  
+  }
   function copyurl (id, attr) {
     let target = null;
 
