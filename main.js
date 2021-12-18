@@ -1,6 +1,7 @@
 let res
   function shorturl() {
 	  
+	  
             var pass = document.getElementById("result");
             pass.select();
             document.execCommand("copy");
@@ -18,7 +19,6 @@ let res
             document.getElementById("text").value = xhr.responseText;
           }
         };
-
         xhr.send();
 	  
 
