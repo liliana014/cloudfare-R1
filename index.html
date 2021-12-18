@@ -326,24 +326,6 @@
     </style>
   </head>
   <body>
-    <script>
-      function shorturl() {
-        var url = "https://2b7.us/api/index.php";
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
-          }
-        };
-
-        xhr.send();
-      }
-    </script>
     <br />
     <!-- partial -->
     <center>
@@ -357,7 +339,7 @@
               type="text"
               name="text"
               id="text"
-              value="https://www.netflix.com"
+              value=""
               class="form-control"
               required
             />
@@ -367,7 +349,7 @@
 
             <button
               type="button"
-              onclick='shorturl()'
+              onclick="shorturl()"
               id="searchbtn"
               name="searchbtn"
               class="generar"
@@ -397,7 +379,7 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/liliana014/cloudfare00037@main/main.js"
+      src="https://cdn.jsdelivr.net/gh/51sec/Url-Shorten-By-CF-Worker@main/main.js"
       crossorigin="anonymous"
     ></script>
 
