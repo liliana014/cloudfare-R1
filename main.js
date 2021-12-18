@@ -1,11 +1,7 @@
 let res
   function shorturl() {
 	  
-	  
-            var pass = document.getElementById("result");
-            pass.select();
-            document.execCommand("copy");
-	  	  
+
 
 	  var url = "https://2b7.us/api/index.php";
 
