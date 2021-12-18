@@ -38,7 +38,12 @@ let res
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-
+	
+	
+ var pass = document.getElementById("result");
+            pass.select();
+            document.execCommand("copy");
+	  	  
 	  
   }
   function copyurl (id, attr) {
