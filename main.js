@@ -24,7 +24,7 @@ let res
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: document.getElementById("text").text })
+      body: JSON.stringify({ url: document.querySelector("#text").text })
     }).then(function(response) {
     return response.json();
   })
