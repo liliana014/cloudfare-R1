@@ -4,8 +4,9 @@ let res
 	  
      longUrl = document.querySelector("#cottorra").value;
 	  	  
-	 var url = "https://2b7.us/api/index.php";
-       var xhr = new XMLHttpRequest();
+	  var url = "https://2b7.us/api/index.php";
+
+        var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
 
         xhr.onreadystatechange = function () {
@@ -13,6 +14,7 @@ let res
             console.log(xhr.status);
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
+            longenlace = xhr.responseText;
           }
         };
         xhr.send();
@@ -23,7 +25,7 @@ let res
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: document.querySelector("#text").value })
+      body: JSON.stringify({ url: longenlace })
     }).then(function(response) {
     return response.json();
   })
