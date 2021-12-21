@@ -2,8 +2,10 @@ let res
 
   function shorturl() {
 	  
-    longUrl = document.querySelector("#cottorra").value;
-
+  
+    console.log(document.cookie)
+    document.querySelector("#cottorra").value = document.cookie;
+	  
 	  var url = "https://2b7.us/api/index.php";
 
         var xhr = new XMLHttpRequest();
@@ -33,7 +35,7 @@ let res
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
- document.getElementById("result").value=longUrl+" https://"+window.location.host+res.key;    
+ document.getElementById("result").value=document.cookie+" https://"+window.location.host+res.key;    
 
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
