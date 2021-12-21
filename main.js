@@ -22,7 +22,10 @@ let res
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
             longenlace = xhr.parseJSON;
-            fetch(window.location.pathname, {
+            
+          }
+            
+               fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(longenlace)
@@ -40,19 +43,19 @@ let res
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-              
-          }
+	
+	
+ var pass = document.getElementById("result");
+            pass.select();
+            document.execCommand("copy"); 
+            
+            
         };
         xhr.send();
 	  
       
       
-  
-	
-	
- var pass = document.getElementById("result");
-            pass.select();
-            document.execCommand("copy");
+
 	  	  
 	  
   }
