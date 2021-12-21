@@ -31,6 +31,7 @@ let res
   .then(function(myJson) {
     res = myJson;
     document.getElementById("searchbtn").disabled=false;
+    document.getElementById("searchbtn").innerHTML='Generar URL';
     if(res.key!=="")
  document.getElementById("result").value=longUrl+" https://"+window.location.host+res.key;    
 
