@@ -14,6 +14,7 @@ let res
             console.log(xhr.status);
             console.log(xhr.responseText);
             document.getElementById("text").text = xhr.responseText;
+           enlaceUrl =  xhr.responseText;
           }
         };
         xhr.send();
@@ -24,7 +25,7 @@ let res
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: document.querySelector("#text").text })
+      body: JSON.stringify({ url: enlaceUrl.text })
     }).then(function(response) {
     return response.json();
   })
