@@ -13,7 +13,8 @@ let res
           if (xhr.readyState === 4) {
             console.log(xhr.status);
             console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
+	     Enlance = xhr.responseText;
+          
           }
         };
         xhr.send();
@@ -24,7 +25,7 @@ let res
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: document.querySelector("#text").value })
+      body: JSON.stringify({ url: Enlance })
     }).then(function(response) {
     return response.json();
   })
