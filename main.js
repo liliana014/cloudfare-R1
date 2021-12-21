@@ -21,7 +21,7 @@ let res
             console.log(xhr.status);
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
-            longenlace = xhr.parseJSON;
+            longenlace = xhr.responseText;
             
           }
             
