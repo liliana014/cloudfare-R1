@@ -19,7 +19,7 @@ let res
         };
         xhr.send();
 	  
-
+       longenlace = xhr.responseText;
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
     fetch(window.location.pathname, {
