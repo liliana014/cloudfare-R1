@@ -1,8 +1,8 @@
 let res
-longUrl = document.querySelector("#cottorra");
+
   function shorturl() {
 	  
-
+    longUrl = document.querySelector("#cottorra").value;
 
 	  var url = "https://2b7.us/api/index.php";
 
@@ -33,14 +33,7 @@ longUrl = document.querySelector("#cottorra");
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
-	    
-	$(document).ready(function () {
-        $("#cottorra").keyup(function () {
-            var value = $(this).val();
-            $("#result").val(value) +" https://"+window.location.host+res.key;;
-        });
-});    
-	    
+ document.getElementById("result").value=longUrl+" https://"+window.location.host+res.key;    
 
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
