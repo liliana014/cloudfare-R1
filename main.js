@@ -13,7 +13,7 @@ let res
           if (xhr.readyState === 4) {
             console.log(xhr.status);
             console.log(xhr.responseText);
-            document.getElementById("text").innerHTML = xhr.responseText;
+            document.getElementById("text").text = xhr.responseText;
           }
         };
         xhr.send();
@@ -24,7 +24,7 @@ let res
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: document.querySelector("#text").innerHTML })
+      body: JSON.stringify({ url: document.querySelector("#text").text })
     }).then(function(response) {
     return response.json();
   })
