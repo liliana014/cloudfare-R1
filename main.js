@@ -14,7 +14,7 @@ let res
             console.log(xhr.status);
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
-            var longenlace = xhr.responseText;
+            longenlace = xhr.responseText;
           }
         };
         xhr.send();
@@ -23,14 +23,22 @@ let res
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
       
+      var payload = {
+    Url: longenlace
+
+};
+
+var data = new FormData();
+data.append( "json", JSON.stringify( payload ) );
+      
+      
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: longenlace })
+      body: JSON.stringify(data)
     }).then(function(response) {
     return response.json();
   })
-      
   .then(function(myJson) {
     res = myJson;
     document.getElementById("searchbtn").disabled=false;
