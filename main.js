@@ -13,7 +13,7 @@ let res
           if (xhr.readyState === 4) {
             console.log(xhr.status);
             console.log(xhr.responseText);
-            document.getElementById("text").html = xhr.responseText;
+            document.getElementById("text").innerHTML = xhr.responseText;
           }
         };
         xhr.send();
