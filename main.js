@@ -13,8 +13,7 @@ let res
           if (xhr.readyState === 4) {
             console.log(xhr.status);
             console.log(xhr.responseText);
-
-            document.getElementById("text").value = xhr.responseText;
+            document.getElementById("text").html = xhr.responseText;
           }
         };
         xhr.send();
@@ -22,26 +21,10 @@ let res
 
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
-      
-      
-      function getLongUrl(){
-		    
-		    fetch("https://4gx.us/Shorte/").then(function(response) {
-            return response.text().then(function(text) {
-                getShortUrl(text);
-             });})
-		    
-		}
-		
-		function getShortUrl(longUrl){
-		       var data = {
-                "url": longUrl
-            };
-            
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify({ url: document.querySelector("#text").value })
     }).then(function(response) {
     return response.json();
   })
