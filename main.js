@@ -19,16 +19,19 @@ let res
         };
         xhr.send();
 	  
-       longenlace = xhr.responseText;
+
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
+      
+      
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: longenlace })
+      body: JSON.stringify(longenlace)
     }).then(function(response) {
     return response.json();
   })
+      
   .then(function(myJson) {
     res = myJson;
     document.getElementById("searchbtn").disabled=false;
