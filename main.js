@@ -33,8 +33,15 @@ longUrl = document.querySelector("#cottorra");
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
-    document.getElementById("result").value=longUrl+"https://"+window.location.host+res.key;
-    $('#exampleModal').modal('show')
+	    
+	$(document).ready(function () {
+        $("#cottorra").keyup(function () {
+            var value = $(this).val();
+            $("#result").val(value) +" https://"+window.location.host+res.key;;
+        });
+});    
+	    
+
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
